@@ -26,10 +26,149 @@
   font-weight: 400;
   font-style: normal;
 }
-body {
-  font-family: CormorantUpright;
-  font-size: 50px;
+@font-face {
+  font-family: Gilroy-Regular;
+  font-display: swap;
+  src: url("../fonts/Gilroy-Regular.woff2") format("woff2"), url("../fonts/Gilroy-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
 }
-body span {
-  color: red;
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  color: #070707;
+  line-height: 1;
+  font-family: "Times New Roman", Georgia, Serif;
+  font-size: 18px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+  font-family: "Times New Roman", Georgia, Serif;
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+._container {
+  max-width: 940.6px;
+  margin: 0 auto;
+}
+
+.header {
+  font-family: Gilroy-Regular;
+  font-weight: 600;
+}
+.header__top {
+  height: 88px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #828282;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+.header__img {
+  margin: 0 0 104px 0;
+}
+
+.menu {
+  width: 100%;
+}
+.menu__list {
+  display: flex;
+  justify-content: space-between;
+}
+.menu__item {
+  line-height: 22px;
+  color: #828282;
+}
+.menu__item_active {
+  color: #070707;
+}
+.denis__body {
+  margin: 40px 0 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.denis__fio {
+  font-size: 47.3392px;
+  line-height: 59px;
+  display: flex;
+  flex-direction: column;
+}
+.denis__info {
+  display: flex;
+  flex-direction: column;
+  line-height: 22px;
+}
+.denis__langs {
+  writing-mode: vertical-lr;
+  transform: rotate(-180deg);
+}
+.denis__lang {
+  font-size: 16px;
+  line-height: 20px;
+  color: #828282;
+}
+.denis__lang_active {
+  color: #070707;
+}
+.denis__trait {
+  color: #070707;
 }

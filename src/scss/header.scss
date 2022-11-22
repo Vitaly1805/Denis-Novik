@@ -1,0 +1,79 @@
+.header {
+    font-family: Gilroy-Regular;
+    font-weight: 600;
+
+    &__top {
+        height: 88px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid $secondColor;
+        transform: matrix(1, 0, 0, 1, 0, 0);
+    }
+
+    &__img {
+        margin: 0 0 104px 0;
+    }
+}
+
+.menu {
+    width: 100%;
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item {
+        line-height: 22px;
+        color: $secondColor;
+
+        &_active {
+            color: $mainColor;
+        }
+    }
+
+    &__main {
+
+    }
+}
+
+.denis {
+    &__body {
+        margin: 40px 0 30px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    &__fio {
+        font-size: 47.3392px;
+        line-height: 59px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        line-height: 22px;
+    }
+
+    &__langs {
+        writing-mode: vertical-lr;
+        transform: rotate(-180deg);
+    }
+
+    &__lang {
+        font-size: 16px;
+        line-height: 20px;
+        color: $secondColor;
+
+        &_active {
+            color: $mainColor;
+        }
+    }
+
+    &__trait {
+        color: $mainColor;
+    }
+}
