@@ -1,5 +1,5 @@
 import svgSprite from "gulp-svg-sprite";
-export const svgSpriteTask = () => {
+export default () => {
 	return app.gulp.src(`${app.path.src.svgicons}`, {})
 		.pipe(app.plugins.plumber(
 			app.plugins.notify.onError({
