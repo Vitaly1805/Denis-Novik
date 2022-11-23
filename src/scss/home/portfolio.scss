@@ -1,0 +1,31 @@
+.portfolio {
+    background: $secondBackground;
+
+    &__body {
+        padding: 113px 0 0 0;
+    }
+
+    &__title {
+        margin: 0 0 47px 0;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+    }
+
+    &__img {
+        margin: 0 0 45px 0;
+    }
+
+    &__link {
+        display: block;
+        line-height: 22px;
+        text-align: center;
+        text-decoration: underline !important;
+        margin: 0 0 99px 0;
+    }
+}

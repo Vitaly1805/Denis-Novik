@@ -121,6 +121,7 @@ h6 {
 .header {
   font-family: Gilroy-Regular;
   font-weight: 600;
+  background: #fff;
 }
 .header__top {
   height: 88px;
@@ -205,6 +206,9 @@ h6 {
   margin: 0;
 }
 
+.skills {
+  background: #fff;
+}
 .skills__body {
   padding: 91px 0 110px 0;
 }
@@ -259,4 +263,28 @@ h6 {
 }
 .skills__star_active {
   fill: #070707;
+}
+
+.portfolio {
+  background: #F6F6F6;
+}
+.portfolio__body {
+  padding: 113px 0 0 0;
+}
+.portfolio__title {
+  margin: 0 0 47px 0;
+}
+.portfolio__list {
+  display: flex;
+  flex-direction: column;
+}
+.portfolio__img {
+  margin: 0 0 45px 0;
+}
+.portfolio__link {
+  display: block;
+  line-height: 22px;
+  text-align: center;
+  text-decoration: underline !important;
+  margin: 0 0 99px 0;
 }
