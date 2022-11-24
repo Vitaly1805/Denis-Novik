@@ -2,22 +2,40 @@
     background: $firstBackgound;
 
     &__body {
-        padding: 83px 0 110px 0;
+        padding-top: 83px;
+        padding-bottom: 110px;
+
+        @media (max-width: 840px) {
+            padding-bottom: 98px;
+        }
     }
 
     &__title {
         margin: 0 0 58px 0;
+
+        @media (max-width: 840px) {
+            margin: 0 0 50px 0;
+        }
     }
 
     &__text {
         line-height: 22px;
         text-align: center;
         margin: 0 0 87px 0;
+
+        @media (max-width: 840px) {
+            margin: 0 0 71px 0;
+        }
     }
 
     &__list {
         display: flex;
         justify-content: space-between;
+
+        @media (max-width: 840px) {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     &__item {
@@ -27,6 +45,10 @@
         justify-content: space-between;
         width: 166px;
         height: 203px;
+
+        @media (max-width: 840px) {
+            margin: 0 0 82px 0;
+        }
     }
 
     &__img {
