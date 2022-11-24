@@ -270,8 +270,7 @@ h6 {
 }
 @media (max-width: 840px) {
   .skills__list {
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
   }
 }
 .skills__item {
@@ -285,6 +284,12 @@ h6 {
 @media (max-width: 840px) {
   .skills__item {
     margin: 0 0 82px 0;
+    flex-basis: 50%;
+  }
+}
+@media (max-width: 500px) {
+  .skills__item {
+    flex-basis: 100%;
   }
 }
 .skills__img {
@@ -329,7 +334,7 @@ h6 {
 }
 @media (max-width: 840px) {
   .portfolio__body {
-    margin: 0 0 81px 0;
+    padding-top: 0 0 81px 0;
   }
 }
 .portfolio__title {
@@ -362,10 +367,22 @@ h6 {
 }
 
 .contacts__body {
-  padding: 118px 0 123px 0;
+  padding-top: 118px;
+  padding-bottom: 123px;
+}
+@media (max-width: 840px) {
+  .contacts__body {
+    padding-top: 82px;
+    padding-bottom: 118px;
+  }
 }
 .contacts__title {
   margin: 0 0 20px 0;
+}
+@media (max-width: 840px) {
+  .contacts__title {
+    margin: 0 0 27px 0;
+  }
 }
 .contacts__text {
   line-height: 21px;
@@ -377,10 +394,20 @@ h6 {
   justify-content: center;
   margin: 0 0 85.78px 0;
 }
+@media (max-width: 840px) {
+  .contacts__btn-wrap {
+    margin: 0 0 48px 0;
+  }
+}
+@media (max-width: 500px) {
+  .contacts__btn-wrap ._btn {
+    width: 100%;
+  }
+}
 .contacts__links {
   display: flex;
   justify-content: space-between;
-  width: 344px;
+  max-width: 344px;
   margin: 0 auto;
   height: 83px;
 }
@@ -394,4 +421,9 @@ h6 {
   line-height: 17px;
   text-align: center;
   color: #828282;
+}
+@media (max-width: 840px) {
+  .contacts__likeme {
+    font-size: 18px;
+  }
 }

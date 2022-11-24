@@ -1,11 +1,21 @@
 .contacts {
 
     &__body {
-        padding: 118px 0 123px 0;
+        padding-top: 118px;
+        padding-bottom: 123px;
+
+        @media (max-width: 840px) {
+            padding-top: 82px;
+            padding-bottom: 118px;
+        }
     }
 
     &__title {
         margin: 0 0 20px 0;
+
+        @media (max-width: 840px) {
+            margin: 0 0 27px 0;
+        }
     }
 
     &__text {
@@ -18,12 +28,22 @@
         display: flex;
         justify-content: center;
         margin: 0 0 85.78px 0;
+
+        @media (max-width: 840px) {
+            margin: 0 0 48px 0;
+        }
+
+        & ._btn {
+            @media (max-width: 500px) {
+                width: 100%;
+            }
+        }
     }
 
     &__links {
         display: flex;
         justify-content: space-between;
-        width: 344px;
+        max-width: 344px;
         margin: 0 auto;
         height: 83px;
     }
@@ -39,5 +59,9 @@
         line-height: 17px;
         text-align: center;
         color: $secondColor;
+
+        @media (max-width: 840px) {
+            font-size: 18px;
+        }
     }
 }
