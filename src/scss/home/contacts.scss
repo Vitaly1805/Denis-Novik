@@ -1,0 +1,43 @@
+.contacts {
+
+    &__body {
+        padding: 118px 0 123px 0;
+    }
+
+    &__title {
+        margin: 0 0 20px 0;
+    }
+
+    &__text {
+        line-height: 21px;
+        text-align: center;
+        margin: 0 0 33px 0;
+    }
+
+    &__btn-wrap {
+        display: flex;
+        justify-content: center;
+        margin: 0 0 85.78px 0;
+    }
+
+    &__links {
+        display: flex;
+        justify-content: space-between;
+        width: 344px;
+        margin: 0 auto;
+        height: 83px;
+    }
+
+    &__link {
+        margin: 0 0 46px 0;
+        height: 40px;
+        width: 40px;
+    }
+
+    &__likeme {
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        color: $secondColor;
+    }
+}

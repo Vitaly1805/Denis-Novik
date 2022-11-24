@@ -2,17 +2,17 @@
     background: $firstBackgound;
 
     &__body {
-        padding: 91px 0 110px 0;
+        padding: 83px 0 110px 0;
     }
 
     &__title {
-        margin: 0 0 69px 0;
+        margin: 0 0 58px 0;
     }
 
     &__text {
         line-height: 22px;
         text-align: center;
-        margin: 0 0 83.5px 0;
+        margin: 0 0 87px 0;
     }
 
     &__list {
@@ -26,13 +26,14 @@
         align-items: center;
         justify-content: space-between;
         width: 166px;
-        height: 206px;
+        height: 203px;
     }
 
     &__img {
         width: 89px;
         height: 89px;
-        margin: 0 0 24px 0;
+        margin: 0 auto 21px auto;
+        display: block;
 
         &_figma {
             width: 60px;
@@ -54,10 +55,10 @@
     }
 
     &__star {
-        margin: 0 9px 0 0;
+        margin: 0 12px 0 0;
         fill: #E5E5E5;
-        width: 26px; 
-        height: 26px;
+        width: 22px; 
+        height: 22px;
 
         &:last-child {
             margin: 0;
