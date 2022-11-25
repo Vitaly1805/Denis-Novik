@@ -21,6 +21,7 @@
             background: #fff;
             top: -100%;
             left: 0;
+            overflow: auto;
         }
 
         &.active {
@@ -69,7 +70,6 @@
 
         @media (max-width: $mobile) {
             flex-direction: column;
-            font-size: 34px;
             margin: 76px 0 0 26px;
         }
     }
@@ -84,6 +84,11 @@
 
         @media (max-width: $mobile) {
             margin: 0 0 68px 0;
+            font-size: 34px;
+        }
+
+        @media (max-width: 375px) {
+            font-size: 30px;
         }
     }
 }
@@ -129,9 +134,23 @@
         writing-mode: vertical-lr;
         transform: rotate(-180deg);
         margin: 0 -3px 11px 0;
+        transition: bottom 0.5s ease;
 
         @media (max-width: $mobile) {
-            display: none;
+            position: absolute;
+            writing-mode: vertical-rl;
+            z-index: 3;
+            transform: rotate(0);
+            bottom: -100%;
+            right: 26px;
+            visibility: hidden;
+        }
+
+        &.active {   
+            @media (max-width: $mobile) {
+                bottom: 57px;
+                visibility: visible;
+            }
         }
     }
 
@@ -142,6 +161,16 @@
 
         &_active {
             color: $mainColor;
+        }
+
+        @media (max-width: $mobile) {
+            font-size: 34px;
+            line-height: 42px;
+        }
+
+        
+        @media (max-width: 375px) {
+            font-size: 30px;
         }
     }
 

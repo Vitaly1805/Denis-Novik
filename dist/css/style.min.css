@@ -155,6 +155,7 @@ h6 {
     background: #fff;
     top: -100%;
     left: 0;
+    overflow: auto;
   }
 }
 @media (max-width: 767.98px) {
@@ -202,7 +203,6 @@ h6 {
 @media (max-width: 767.98px) {
   .menu__list {
     flex-direction: column;
-    font-size: 34px;
     margin: 76px 0 0 26px;
   }
 }
@@ -216,6 +216,12 @@ h6 {
 @media (max-width: 767.98px) {
   .menu__item {
     margin: 0 0 68px 0;
+    font-size: 34px;
+  }
+}
+@media (max-width: 375px) {
+  .menu__item {
+    font-size: 30px;
   }
 }
 
@@ -259,10 +265,23 @@ h6 {
   writing-mode: vertical-lr;
   transform: rotate(-180deg);
   margin: 0 -3px 11px 0;
+  transition: bottom 0.5s ease;
 }
 @media (max-width: 767.98px) {
   .denis__langs {
-    display: none;
+    position: absolute;
+    writing-mode: vertical-rl;
+    z-index: 3;
+    transform: rotate(0);
+    bottom: -100%;
+    right: 26px;
+    visibility: hidden;
+  }
+}
+@media (max-width: 767.98px) {
+  .denis__langs.active {
+    bottom: 57px;
+    visibility: visible;
   }
 }
 .denis__lang {
@@ -272,6 +291,17 @@ h6 {
 }
 .denis__lang_active {
   color: #070707;
+}
+@media (max-width: 767.98px) {
+  .denis__lang {
+    font-size: 34px;
+    line-height: 42px;
+  }
+}
+@media (max-width: 375px) {
+  .denis__lang {
+    font-size: 30px;
+  }
 }
 .denis__trait {
   color: #070707;
