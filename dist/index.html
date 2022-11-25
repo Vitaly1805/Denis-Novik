@@ -8,20 +8,19 @@
 	<title>Главная</title>
 </head>
 	<body>
-		<header class="header">
+		<div class="wrapper">
+			<header class="header">
     <div class="header__body _container">
         <div class="header__top">
-            <div class="header__menu menu">
-                <div class="menu__body">
-                    <div class="menu__list">
-                        <div class="menu__item menu__item_active">Home</div>
-                        <div class="menu__item">About me</div>
-                        <div class="menu__item">Skills</div>
-                        <div class="menu__item">Portfolio</div>
-                        <div class="menu__item">Contacts</div>
-                    </div>
+            <nav class="header__menu menu">
+                <div class="menu__list">
+                    <div class="menu__item menu__item_active">Home</div>
+                    <div class="menu__item">About me</div>
+                    <div class="menu__item">Skills</div>
+                    <div class="menu__item">Portfolio</div>
+                    <div class="menu__item">Contacts</div>
                 </div>
-            </div>
+            </nav>
         </div>
         <div class="header__main">
             <div class="header__denis denis">
@@ -40,13 +39,19 @@
                        <span class="denis__lang denis__lang_active">ENG</span>
                     </div>
                 </div>
+                <div class="header__burger burger">
+                    <div class="burger__line burger__line_top"></div>
+                    <div class="burger__line burger__line_mid"></div>
+                    <div class="burger__line burger__line_bot"></div>
+                </div>
             </div>
             <img src="../img/header.png" alt="" class="header__img">
+            <img src="../img/header_adapt.png" alt="" class="header__img_adapt">
         </div>
     </div>
 </header>
-		<main>
-			<div class="about">
+			<main>
+				<div class="about">
     <div class="about__body _container">
         <div class="about__title _title">About me</div>
         <div class="about__text">
@@ -56,7 +61,7 @@
         </div>
     </div>
 </div>
-			<div class="skills">
+				<div class="skills">
     <div class="skills__body _container">
         <div class="skills__title _title">
             Skills
@@ -160,7 +165,7 @@
         </div>
     </div>
 </div>
-			<div class="portfolio">
+				<div class="portfolio">
     <div class="portfolio__body _container">
         <div class="portfolio__title _title">
             Portfolio
@@ -181,7 +186,7 @@
         </div>
     </div>
 </div>
-			<div class="contacts">
+				<div class="contacts">
     <div class="contacts__body _container">
         <div class="contacts__title _title">
             Contacts
@@ -215,8 +220,9 @@
         </div>
     </div>
 </div>
-		</main>
-		<footer></footer>
+			</main>
+			<footer></footer>
+		</div>
 		<script src="js/app.min.js"></script>
 	</body>
 </html>
