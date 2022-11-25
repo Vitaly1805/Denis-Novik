@@ -1,0 +1,101 @@
+.modal-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: #000000, $alpha: .7);
+    top: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s ease;
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
+
+        .modal {
+            top: 50%;
+        }
+    }
+}
+
+.modal {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    top: -100%;
+    transition: all .9s linear;
+    transform: translate(-50%, -50%);
+    // margin: 0 15px;
+
+    &__body {
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        background: $firstBackgound;
+        width: 500px;
+        position: relative;
+    }
+
+    &__title {
+        margin: 40px 0 30px 0;
+    }
+
+    &__input,
+    &__textarea {
+        margin: 0 0 20px 0;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background: rgba($color: #000000, $alpha: .1);
+        box-sizing: border-box;
+        transition: border 0.5s ease;
+        border: 2px solid rgba($color: #000000, $alpha: .1);
+
+        &:focus {
+            border: 2px solid $mainColor;
+        }
+    }
+
+    &__textarea {
+        resize: none;
+    }
+
+    &__submit {
+    }
+}
+
+.close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 26px;
+    width: 33px;
+    cursor: pointer;
+    
+    &__body {
+        position: relative;
+
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            height: 4px;
+            width: 100%;
+            background: $secondColor;
+        }
+
+        &::after {
+            transform: rotate(45deg);
+            margin: 11px 0 0 0;
+        }
+
+        &::before {
+            transform: rotate(-45deg);
+            margin: 11px 0 0 0;
+        }
+    }
+}

@@ -1,6 +1,5 @@
-import * as flsFunctions from "./modules/functions.js";
-
-flsFunctions.isWebp();
+import * as flsFunctions from "./modules/functions.js"
+import modalWindow from './modules/modal.js'
 
 //Переключение мобильного меню
 function toogleMenu() {
@@ -29,8 +28,6 @@ menuItems.forEach(menuItem => {
     if(blockName) {
         const aboutBlock = document.querySelector('.' + blockName)
 
-        console.log(aboutBlock)
-
         menuItem.addEventListener('click', (event) => {
             event.preventDefault()
 
@@ -40,6 +37,31 @@ menuItems.forEach(menuItem => {
 
             aboutBlock.scrollIntoView({alignTop: true, behavior: "smooth"})
         })
+    }
+})
+
+//Открытие и закрытие модального окна
+const btnOpenModal = document.querySelector('.contacts__btn')
+const btnCloseModal = document.querySelector('.modal__close')
+const modalWrapper = document.querySelector('.modal-wrapper')
+
+btnOpenModal.addEventListener('click', () => {
+    modalWindow.open()
+})
+
+btnCloseModal.addEventListener('click', () => {
+    modalWindow.close()
+})
+
+modalWrapper.addEventListener('click', (event) => {
+    if(modalWrapper === event.target) {
+        modalWindow.close()
+    }
+})
+
+document.addEventListener('keydown', () => {
+    if(modalWindow.isOpen) {
+        modalWindow.close()
     }
 })
 

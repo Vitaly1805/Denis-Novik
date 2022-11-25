@@ -1,7 +1,8 @@
 ._container {
     max-width: $widthContainer;
     margin: 0 auto;
-    padding: 0 30px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 ._title {
@@ -21,4 +22,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    transition: all .5 ease;
+
+    &:hover {
+        background: rgb(36, 34, 34);
+    }
 }

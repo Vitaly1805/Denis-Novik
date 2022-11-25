@@ -67,6 +67,8 @@ button,
 textarea {
   font-family: "Gilroy-Regular";
   font-size: inherit;
+  outline: 0;
+  outline-offset: 0;
 }
 
 button {
@@ -109,7 +111,8 @@ h6 {
 ._container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 30px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 ._title {
@@ -129,6 +132,11 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  transition: all 0.5 ease;
+}
+._btn:hover {
+  background: rgb(36, 34, 34);
 }
 
 .header {
@@ -568,8 +576,8 @@ body.lock {
   display: flex;
   justify-content: space-between;
   max-width: 344px;
-  margin: 0 auto;
-  height: 83px;
+  margin: 0 auto 43px auto;
+  height: 40px;
 }
 .contacts__link {
   margin: 0 0 46px 0;
@@ -586,4 +594,88 @@ body.lock {
   .contacts__likeme {
     font-size: 18px;
   }
+}
+
+.modal-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s ease;
+}
+.modal-wrapper.active {
+  visibility: visible;
+  opacity: 1;
+}
+.modal-wrapper.active .modal {
+  top: 50%;
+}
+
+.modal {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  top: -100%;
+  transition: all 0.9s linear;
+  transform: translate(-50%, -50%);
+}
+.modal__body {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  background: #fff;
+  width: 500px;
+  position: relative;
+}
+.modal__title {
+  margin: 40px 0 30px 0;
+}
+.modal__input, .modal__textarea {
+  margin: 0 0 20px 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  transition: border 0.5s ease;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+}
+.modal__input:focus, .modal__textarea:focus {
+  border: 2px solid #070707;
+}
+.modal__textarea {
+  resize: none;
+}
+.close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  height: 26px;
+  width: 33px;
+  cursor: pointer;
+}
+.close__body {
+  position: relative;
+}
+.close__body::after, .close__body::before {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: #828282;
+}
+.close__body::after {
+  transform: rotate(45deg);
+  margin: 11px 0 0 0;
+}
+.close__body::before {
+  transform: rotate(-45deg);
+  margin: 11px 0 0 0;
 }
