@@ -1,32 +1,97 @@
-let modalWindow = document.querySelector('.modal-wrapper')
-const body = document.querySelector('body')
-let containers = document.querySelectorAll('._container')
-const widthScroll = window.innerWidth - document.documentElement.clientWidth
+export default class Modal {
+    DURATION_ANIMATION = 600
+    body = document.querySelector('body')
+    isOpen = false
+    modal
+    modalBody
+    btnClose
+    btnOpen
 
-function addPaddingContainers() {
-    containers.forEach(e => {
-        e.parentElement.style.marginRight = widthScroll + 'px'
-    })
-}
+    constructor(nameModal) {
+        this.nameModal = nameModal
+        this.#setBtnOpen()
+        this.#setModal()
+        this.#setModalBody()
+        this.#setModalClose()
+        this.#addListenerOfBtnOpen()
+        this.#addListenersClose()
+    }
 
-function removePaddingContainers() {
-    containers.forEach(e => {
-        e.parentElement.style.marginRight = '0px'
-    })
-}
-
-export default {
-    isOpen: false,
     open() {
-        addPaddingContainers()
-        modalWindow.classList.add('active')
-        body.classList.add('lock')
+        if(this.isOpen) return
+
+        this.#addPaddingContainers()
+        this.modal.classList.add('active')
+        this.body.classList.add('lock')
         this.isOpen = true
-    },
+    }
+
     close() {
-        removePaddingContainers()   
-        modalWindow.classList.remove('active')
-        body.classList.remove('lock')
+        this.modal.classList.remove('active')
+        setTimeout(() => {
+            this.#removePaddingContainers()   
+            this.body.classList.remove('lock')
+        }, this.DURATION_ANIMATION)
         this.isOpen = false
+    }
+
+    #setBtnOpen() {
+        const pattern = `[href=${this.nameModal}]`
+
+        if(document.querySelector(pattern)) {
+            this.btnOpen = document.querySelector(pattern)
+        }
+    }
+
+    #setModal() {
+        if(document.getElementById(this.nameModal)) {
+            this.modal = document.getElementById(this.nameModal)
+        }
+    }
+
+    #setModalBody() {
+        if(document.querySelector('.modal__body')) {
+            this.modalBody = document.querySelector('.modal__body')
+        }
+    }
+
+    #setModalClose() {
+        if(document.querySelector('.modal__close')) {
+            this.btnClose = document.querySelector('.modal__close')
+        }
+    }
+
+    #addListenerOfBtnOpen() {
+        this.btnOpen.addEventListener('click', (event) => {
+            event.preventDefault()
+            this.open()
+        })
+    }
+
+    #addListenersClose() {
+        this.btnClose.addEventListener('click', () => {
+            this.close()
+        })
+
+        this.modal.addEventListener('click', (event) => {
+            if(this.modal === event.target || this.modalBody === event.target) {
+                this.close()
+            }
+        })
+
+        document.addEventListener('keydown', (event) => {
+            if(this.isOpen && event.code === 'Escape') {
+                this.close()
+            }
+        })
+    }
+
+    #addPaddingContainers() {
+        const widthScroll = window.innerWidth - document.documentElement.clientWidth
+        this.body.parentElement.style.marginRight = widthScroll + 'px'
+    }
+    
+    #removePaddingContainers() {
+        this.body.parentElement.style.marginRight = '0px'
     }
 }

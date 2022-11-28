@@ -1,69 +1,34 @@
 import * as flsFunctions from "./modules/functions.js"
-import modalWindow from './modules/modal.js'
+import menu from './modules/menu.js'
+import Anchor from './modules/anchor.js'
+import Modal from './modules/modal.js'
 
 //Переключение мобильного меню
-function toogleMenu() {
-    burger.classList.toggle('active')
-    headerTop.classList.toggle('active')
-    langs.classList.toggle('active')
-    body.classList.toggle('lock')
-}
-
 const burger = document.querySelector('.burger')
-const headerTop = document.querySelector('.header__top')
-const body = document.querySelector('body')
-const langs = document.querySelector('.denis__langs')
 
 burger.addEventListener('click', () => {
-    toogleMenu()
+    if(menu.isOpen) {
+        menu.close()
+    } else {
+        menu.open()
+    }
+})
+
+//Закрытие мобильного меню при изменении разрешения на декстопную версию
+window.addEventListener('resize', () => {
+    if(window.innerWidth > 840 && menu.isOpen) {
+        menu.close()
+    }
 })
 
 
 //Универсальный якорь для пунктов меню
-const menuItems = document.querySelectorAll('.menu__item')
+const anchors = document.querySelectorAll('.menu__item')
+new Anchor(anchors, burger, menu)
 
-menuItems.forEach(menuItem => {
-    const blockName = menuItem.className.match(/menu__(?!item)(.*)/) ? menuItem.className.match(/menu__(?!item)(.*)/)[1] : null
 
-    if(blockName) {
-        const aboutBlock = document.querySelector('.' + blockName)
-
-        menuItem.addEventListener('click', (event) => {
-            event.preventDefault()
-
-            if(burger.classList.contains('active')) {
-                toogleMenu()
-            }
-
-            aboutBlock.scrollIntoView({alignTop: true, behavior: "smooth"})
-        })
-    }
-})
-
-//Открытие и закрытие модального окна
-const btnOpenModal = document.querySelector('.contacts__btn')
-const btnCloseModal = document.querySelector('.modal__close')
-const modalWrapper = document.querySelector('.modal-wrapper')
-
-btnOpenModal.addEventListener('click', () => {
-    modalWindow.open()
-})
-
-btnCloseModal.addEventListener('click', () => {
-    modalWindow.close()
-})
-
-modalWrapper.addEventListener('click', (event) => {
-    if(modalWrapper === event.target) {
-        modalWindow.close()
-    }
-})
-
-document.addEventListener('keydown', () => {
-    if(modalWindow.isOpen) {
-        modalWindow.close()
-    }
-})
+//Создание поведения модального окна
+new Modal('modal-contacts')
 
 /*
 import Swiper, { Navigation, Pagination } from 'swiper';

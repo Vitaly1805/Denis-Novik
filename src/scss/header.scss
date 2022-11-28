@@ -144,7 +144,7 @@
             bottom: -100%;
             right: 26px;
             visibility: hidden;
-        }
+        }   
 
         &.active {   
             @media (max-width: $mobile) {
@@ -152,12 +152,17 @@
                 visibility: visible;
             }
         }
+
+        @media (max-height: 400px) {
+            bottom: 0 !important;
+        }
     }
 
     &__lang {
         font-size: 16px;
         line-height: 20px;
         color: $secondColor;
+        cursor: pointer;
 
         &_active {
             color: $mainColor;
@@ -175,7 +180,16 @@
     }
 
     &__trait {
-        color: $mainColor;
+        background: $mainColor;
+        width: 16px;
+        height: 2px;
+        display: inline-block;
+        margin: 0 5px 0 0;
+
+        @media (max-width: $mobile) {
+            height: 4px;
+            width: 30px;
+        }
     }
 }
 
@@ -232,8 +246,4 @@
             }
         }
     }
-}
-
-body.lock {
-    overflow: hidden;
 }
